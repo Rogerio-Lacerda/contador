@@ -2,8 +2,18 @@ import Contador from "./contador.js";
 
 const contador = new Contador("24 December 2023 23:59:59 GMT-0300");
 
-const contadorTexto = document.querySelector(".contador");
+const contadorTexto = document.querySelector(".grid-contador");
+
+contadorTexto.innerHTML = `
+  <p class="contador">${contador.faltamDias.days}<span>Dias</span></p>
+  <p class="contador">${contador.faltamDias.hours}<span>Hora(s)</span></p>
+  <p class="contador">${contador.faltamDias.minutes}<span>Min.</span></p>
+  <p class="contador">${contador.faltamDias.seconds}<span>Sec.</span></p>`;
 
 setInterval(() => {
-  contadorTexto.innerText = `${contador.faltamDias.days} dias e ${contador.faltamDias.hours}:${contador.faltamDias.minutes}:${contador.faltamDias.seconds}hs`;
+  contadorTexto.innerHTML = `
+  <p class="contador">${contador.faltamDias.days}<span>Dias</span></p>
+  <p class="contador">${contador.faltamDias.hours}<span>Hora(s)</span></p>
+  <p class="contador">${contador.faltamDias.minutes}<span>Min.</span></p>
+  <p class="contador">${contador.faltamDias.seconds}<span>Sec.</span></p>`;
 }, 1000);

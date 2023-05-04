@@ -12,11 +12,9 @@ body {
 img {
   display: block;
   max-width: 100%;
-  width: 80px;
-  height: 80px;
 }
 
-.container-contador {
+.container {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -28,14 +26,6 @@ img {
 
 .container-titulo {
   display: grid;
-  position: relative;
-}
-
-.container-titulo img {
-  position: absolute;
-  display: block;
-  top: -35px;
-  left: -30px;
 }
 
 .titulo {
@@ -44,11 +34,43 @@ img {
   justify-self: center;
 }
 
-.contador {
-  color: #fff;
+.grid-contador {
   align-self: start;
   justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.contador {
+  color: #fff;
   font-size: 3rem;
   box-shadow: 0 0 4px #fff;
   padding: 8px;
+  display: grid;
+  justify-items: center;
+  border-radius: 4px;
+}
+
+.contador span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 730px) {
+  .titulo {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .contador {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .titulo,
+  .contador {
+    font-size: 1.8rem;
+  }
 }
