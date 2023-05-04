@@ -38,10 +38,17 @@ export default class Contador {
     return seconds;
   }
 
-  init() {
-    console.log(this.daysTime);
-    console.log(this.hoursTime % 24);
-    console.log(this.minutesTime % 60);
-    console.log(this.secondsTime % 60);
+  get faltamDias() {
+    const days = this.daysTime;
+    const hours = this.hoursTime % 24;
+    const minutes = this.minutesTime % 60;
+    const seconds = this.secondsTime % 60;
+
+    return {
+      days,
+      hours,
+      minutes,
+      seconds,
+    };
   }
 }
