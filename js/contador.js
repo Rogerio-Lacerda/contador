@@ -14,11 +14,34 @@ export default class Contador {
   }
 
   get dateTimeStamp() {
-    const timeDate = this.DateActual.getTime() - this.dateNatal.getTime();
+    const timeDate = this.dateNatal.getTime() - this.DateActual.getTime();
     return timeDate;
   }
 
+  get daysTime() {
+    const days = Math.floor(this.dateTimeStamp / (24 * 60 * 60 * 1000));
+    return days;
+  }
+
+  get hoursTime() {
+    const hours = Math.floor(this.dateTimeStamp / (60 * 60 * 1000));
+    return hours;
+  }
+
+  get minutesTime() {
+    const minutes = Math.floor(this.dateTimeStamp / (60 * 1000));
+    return minutes;
+  }
+
+  get secondsTime() {
+    const seconds = Math.floor(this.dateTimeStamp / 1000);
+    return seconds;
+  }
+
   init() {
-    console.log(this.dateTimeStamp);
+    console.log(this.daysTime);
+    console.log(this.hoursTime % 24);
+    console.log(this.minutesTime % 60);
+    console.log(this.secondsTime % 60);
   }
 }
